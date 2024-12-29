@@ -1,0 +1,1327 @@
+
+/*GLOBAL*/
+body {
+    display:flex;
+    flex-direction: column;
+    margin:0;
+}
+@font-face {
+    font-family:'lobster';
+    font-display: swap;
+    src: url('Lobster-Regular.woff');
+}
+button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+html{
+    overflow-y: auto;
+    margin:0;
+}
+a{
+    color:white;
+}
+*{
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+ul{
+    list-style: none;
+
+}
+h3{
+    padding: 0;margin-left:10px;margin-bottom: 0;font-size: 3rem;
+}
+.transparent-red-btn{
+    height: 2.5rem;
+    padding:0 1rem 0 1rem;
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:1.3rem;
+    font-weight: bolder;
+    background: transparent;
+    box-shadow: none;
+    border:0.2rem solid rgb(73, 17, 28);
+    color:rgb(73, 17, 28);
+    cursor: pointer;
+}
+.transparent-red-btn:hover{
+    opacity: 0.7;
+}
+.transparent-white-btn{
+    height: 2.5rem;
+    padding:0 1rem 0 1rem;
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:1.3rem;
+    font-weight: bolder;
+    background: transparent;
+    box-shadow: none;
+    border:0.2rem solid white;
+    color:white;
+    cursor: pointer;
+    transition: 1s all ease;
+}
+
+.transparent-white-btn:hover:before{
+    opacity: 0.5;
+    animation: buttonHover;
+    animation-fill-mode: forwards;
+}
+@keyframes buttonHover{
+    0%{
+        background-color: red;
+        width:100%;
+        height:0;
+    }
+    100%{
+        background-color: deeppink;
+        height:100%;
+    }
+}
+.underline-char{
+    border-bottom: 0.3rem solid black;
+    border-radius: 5px;
+}
+.indent{
+    color:transparent;
+}
+/*LANDING PAGE DOWN ARROW ANIMATION*/
+
+.arrowAni{
+    animation:scale-up-down 1.7s;
+    -moz-animation:scale-up-down 1.7s;
+    -o-animation:scale-up-down 1.7s ;
+    -webkit-animation:scale-up-down 1.7s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 3;
+}
+@keyframes scale-up-down {
+    0%{transform: scale(1.0);}
+    25%{transform: scale(1.0);}
+    50%{transform: scale(1.0);}
+    75%{transform: scale(1.5);}
+    100%{transform: scale(1.0);}
+}
+
+/*MOBILE*/
+@media screen and (max-width:650px) {
+    body {
+        display:flex;
+        flex-direction: column;
+        margin:0;
+    }
+
+    /*MAIN PAGE BLOCK*/
+    header{
+        background:url("fancy-bar-seating-1359x973_2_optimized.jpg")no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        min-height: 100vh;
+        margin:0;
+    }
+    .logo-wrapper{
+        position: relative;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background-color:rgba(73, 17, 28,0.4);
+        height: 100vh;
+        margin: 0;
+    }
+
+    .logo {
+        font-family: lobster, sans-serif;
+        font-size: 3.5rem;
+        color: white;
+    }
+    .description{
+        font-size:1rem;
+        display: block;
+    }
+    .down-arrow{
+        position: absolute;
+        bottom: 10%;
+        left:48%;
+        color:white;
+        cursor: pointer;
+        font-size: 3.5rem;
+        background-color: transparent;
+        border:none;
+        outline: none;
+    }
+   .drop-button{
+       box-sizing: content-box;
+       width:80vw;
+       border-bottom: 1px solid black;
+   }
+    .drop-button a{
+        font-family: Barlow Condensed,sans-serif;
+        font-size: 2rem;
+        color:black;
+    }
+    .drop-button a:hover{
+
+    }
+    a:link,a:visited{
+        text-decoration: none;
+    }
+    .dropdown-content{
+        display:none;
+    }
+    /* COMPANY INFO SECTION*/
+    .mobile-company-info{
+        height:auto;
+        margin:0;
+        background-color:#F6F1EE;
+        min-height: 100%;
+        color:black;
+        font-family:"Barlow Condensed",sans-serif;
+        font-weight: bolder;
+        font-size: 1.5rem;
+        display: block;
+    }
+    .info-li{
+        padding:4px;
+    }
+    .company-info-wrapper{
+        height: 100%;
+        width:1fr;
+        overflow: hidden;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:baseline;
+        align-content:center;
+    }
+    /* ABOUT US SECTION */
+    .about-us{
+        height:auto;
+        margin:0;
+        background-color: #F6F1EE;
+        min-height: 100%;
+        color:black;
+        font-family:"Barlow Condensed",sans-serif;
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
+    .about-us-wrapper{
+        height: 100%;
+        width:1fr;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:baseline;
+        align-content: center;
+    }
+    /*MENU BLOCKS*/
+    /*DRINK MENU*/
+    .drink-menu-template{
+        height:calc(100vh - 20rem);
+        margin:0;
+        background:url("copper-mug_915x873_compressed.jpg") center no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        border:0.5rem solid #F6F1EE;
+    }
+    .drink-menu-template.lazy {
+        background-image: none;
+        background-color: #F6F1EE;
+    }
+    .drink-menu-wrapper{
+        height: 100%;
+        /*width:100%;*/
+        /*EXP- CHANGING WIDTH TO 1FR */
+        width:1fr;
+        /* */
+        margin: 0;
+        /*EXP-CHANGING A FROM '0.4' TO 0.9/1/0 */
+        background:rgba(73, 17, 28,0.9);
+        /*ADDING A BORDER */
+        border-left: 0.5rem solid #F6F1EE;
+        border-right: 0.5rem solid #F6F1EE;
+        border-bottom: 0.5rem solid #F6F1EE;
+        /* */
+        /*ADDING PADDING */
+        padding:0.5rem;
+        /* */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    .drink-menu-template-text{
+        padding:1rem;
+        font-family:Barlow Condensed, sans-serif;
+        font-size:3rem;
+        color:white;
+    }
+    /*BACKGROUND DIV*/
+    .barrel-img-fixed-div{
+        height:11rem;/*calc(100vh - 25rem)*/
+        background: url("barrels_cropped_915x873_compressed.jpg") no-repeat center fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        margin:0;
+        will-change: transform;
+    }
+    .barrel-img-fixed-div.lazy {
+        background-image: none;
+        background-color: #F6F1EE;
+    }
+    /*ENTREE MENU */
+    .entree-menu-template{
+        height:calc(100vh - 20rem);
+        margin:0;
+        background:url("pork-shishito_915x873.jpg") center no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        border: 0.5rem solid #F6F1EE;
+        border-bottom: 0;
+    }
+    .entree-menu-template.lazy {
+        background-image: none;
+        background-color: #F6F1EE;
+    }
+    .entree-menu-wrapper{
+        height: 100%;
+        /*width:100%;*/
+        /*EXP- CHANGING WIDTH TO 1FR */
+        width:1fr;
+        /* */
+        margin: 0;
+        /*EXP-CHANGING A FROM '0.4' TO 0.9/1/0 */
+        background:rgba(73, 17, 28,0.9);
+        /*ADDING A BORDER */
+        border-left: 0.5rem solid #F6F1EE;
+        border-right: 0.5rem solid #F6F1EE;
+        border-top: 0.5rem solid #F6F1EE;
+        /* */
+        /*ADDING PADDING */
+        padding:0.5rem;
+        /* */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    .entree-menu-template-text{
+        padding:1rem;
+        font-family: Barlow Condensed, sans-serif;
+        font-size:3rem;
+        color:white;
+    }
+    /* DIV*/
+    .events{
+        height:auto;
+        margin:0;
+        min-height: 100%;
+    }
+
+    .events-wrapper{
+        height: 100%;
+        width:1fr;
+        background-color: #F6F1EE;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        align-content: center;
+        padding-bottom: 0.5rem;
+    }
+    .events-text{
+        color:black;
+        font-family:"Barlow Condensed",sans-serif;
+        font-weight: bolder;
+        font-size: 1.5rem;
+        padding: 2px 2px 2px 2px;
+    }
+
+    /*TASTING MENU*/
+    .tasting-menu-template{
+        height:calc(100vh - 20rem);
+        margin:0;
+        background:url("plating_tongs_915x873_compressed.jpg") center no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        border: 0.5rem solid #F6F1EE;
+        border-bottom: 0;
+    }
+    .tasting-menu-template.lazy {
+        background-image: none;
+        background-color: #F6F1EE;
+    }
+    .tasting-menu-wrapper{
+        height: 100%;
+        /*width:100%;*/
+        /*EXP- CHANGING WIDTH TO 1FR */
+        width:1fr;
+        /* */
+        margin: 0;
+        /*EXP-CHANGING A FROM '0.4' TO 0.9/1/0 */
+        background:rgba(73, 17, 28,0.9);
+        /*ADDING A BORDER */
+        border-left: 0.5rem solid #F6F1EE;
+        border-right: 0.5rem solid #F6F1EE;
+        border-top: 0.5rem solid #F6F1EE;
+        /* */
+        /*ADDING PADDING */
+        padding:0.5rem;
+        /* */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    .tasting-menu-template-text{
+        padding:1rem;
+        font-family: Barlow Condensed, sans-serif;
+        font-size:3rem;
+        color:white;
+    }
+    /*BACKGROUND DIV*/
+    .fish-vendor-img-fixed-div{
+        height:11rem;/*calc(100vh - 25rem);*/
+        background-image: url("fishman_1_915x873 _compressed.jpg");
+        background-repeat: no-repeat;
+        background-position: right;
+        background-attachment: fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        margin:0;
+        padding: 0;
+        will-change: transform;
+    }
+    .fish-vendor-img-fixed-div.lazy {
+        background-image: none;
+        background-color: #F6F1EE;
+    }
+
+    /* GOOGLE DIRECTIONS SECTION */
+    .map{
+        height:calc(100vh - 30rem);
+        margin:0;
+        border-bottom: 0.5rem solid #F6F1EE;
+        border-top: 0.5rem solid #F6F1EE;
+    }
+    .map.lazy {
+        background-image: none;
+        background-color: #F6F1EE;
+    }
+    /* FOOTER SECTION */
+    .mobile-footer{
+        margin:0;
+        height:8rem;
+        background-color: black;
+        color:white;
+        padding:1rem;
+    }
+    .footer-links{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: center;
+        align-items: center;
+        font-family:Barlow Condensed,sans-serif;
+        font-weight: lighter;
+    }
+    .social-ul{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items: center;
+    }
+    .social-ul li{
+        padding-right:1.5rem;
+    }
+    .social-ul a{
+        text-decoration: none;
+        color:white;
+    }
+
+    /* MOBILE FIXED BOTTOM NAV*/
+    .nav{
+        display:flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items:center;
+        position:fixed;bottom: 0;left: 0;
+        height:2rem;
+        width:calc(100vw - 1.5rem);
+        background-color:#F6F1EE;
+        padding: 1rem;
+        margin:0;
+        z-index:999;
+    }
+    .mobile-logo{
+        display:none;
+        font-family: lobster,"sans-serif";
+        font-size:2rem;
+        color:rgb(73, 17, 28);
+        padding-right:1rem;
+        animation: fadein 1s;
+        animation-fill-mode: forwards;
+    }
+    .mobile-logo.active{
+        display: inline-flex;
+    }
+    .mobile-logo.hide{
+        animation: fadeout 1s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes fadein {
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+    @keyframes fadeout {
+        from{opacity: 1;}
+        to{opacity: 0;}
+    }
+
+    .transparent-red-btn:hover{
+        opacity: 0.7;
+    }
+    .navBar{
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        min-height:100%;
+        background-color:rgba(246, 241, 238,1);/*rgba(73, 17, 28,0.9);*/
+        position: absolute;
+        width: 100vw;
+        padding-bottom: 0.5rem;
+        /*KEEP THE BAR HIDDEN UNTIL ACTIVE */
+        transform: translateY(180px);
+        z-index: -999;
+        will-change: transform;
+    }
+    /*WHEN HAMBURGER BUTTON IS CLICKED */
+    .navBar.nav-active{
+        display: inline-flex;
+        transform: translateY(-180px);
+        transition: transform 0.5s ease-in-out;
+        animation: fadein 0.3s;
+        z-index: -999;
+    }
+    /*NAV BAR SLIDES BACK DOWN*/
+    .navBar.nav-hide{
+        transform: translateY(180px);
+        transition: transform 0.5s ease-in-out;
+        z-index: -999;
+    }
+    /*Empty div -landing space for fixed nav*/
+    /*--.landing-space-for-fixed-nav{
+        height:125px;
+    }*/
+}
+
+/*HAMBURGER BUTTON */
+.menu-btn{
+    z-index:2;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:5rem;
+    width:5rem;
+    cursor: pointer;
+}
+:root{
+    --burger-btn-height:0.3rem;
+    --burger-btn-width:1.5rem;
+}
+.menu-btn-burger{
+    z-index:2;
+    background-color:rgb(73, 17, 28);
+    width:var(--burger-btn-width);
+    height:var(--burger-btn-height);
+    border-radius:5px;
+    transition:all .3s ease-in-out;
+}
+.menu-btn-burger::before,
+.menu-btn-burger::after{
+    content:'';
+    position:absolute;
+    background-color:rgb(73, 17, 28);
+    width:var(--burger-btn-width);
+    height:var(--burger-btn-height);
+    border-radius:5px;
+    transition:all .3s ease-in-out;
+}
+.menu-btn-burger::before{
+    transform:translateY(-0.5rem);
+}
+.menu-btn-burger::after{
+    transform:translateY(0.5rem);
+}
+/*BUTTON ANIMATION*/
+.menu-btn.open .menu-btn-burger{
+    background:transparent;
+}
+.menu-btn.open .menu-btn-burger::before{
+    transform:rotate(45deg)/*translate(35px,-35px)*/;
+}
+.menu-btn.open .menu-btn-burger::after{
+    transform:rotate(-45deg)/*translate(35px,35px)*/;
+}
+/* IMAGE SLIDER*/
+.container{
+   overflow-y: hidden;
+    display: flex;
+    position: relative;
+    border: 0.5rem solid #F6F1EE;
+}
+.container.lazy{
+    background-color: bisque;
+}
+.slider-container{
+    position:relative;
+    height: calc( 100vh - 20rem);
+    width:100vw;
+    display:flex;
+    flex-direction: row;
+    flex-grow: 1;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+}
+.slider{
+    height: calc( 100vh - 20rem);
+    width:100vw;
+    display:flex;
+    flex-direction: row;
+    flex-grow: 1;
+    margin:0;
+    padding:0;
+}
+.image img{
+    height:calc( 100vh - 20rem);
+    width:100vw;
+    object-fit: cover;
+}
+
+/*SOLUTION FOR RESPONSIVE IMAGE */
+/* use javascript to add a class of current, which will = i and always be the current image displayed,
+, the current image will have a min-width:100vw;*/
+.image.lazy{
+    background-color: #F6F1EE;
+}
+
+.btn button{
+    height: 2rem;
+    width: 2rem;
+    background-color: rgba(255,255,255,0.3);
+    border:none;
+    box-shadow:none;
+    cursor: pointer;
+}
+.prev,.next{
+    position: absolute;
+    top:50%;
+}
+.prev{
+    left:2%;
+}
+.next{
+    right:2%;
+}
+.content{
+    display: flex;
+    position: absolute;
+    height:calc(100vh - 20rem);
+    width:100%;
+    /*width:50rem;*/
+}
+.options ul{
+    position: absolute;bottom:1%;left:50%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    z-index: 999;
+    transform: translateX(calc(-50% - 0.5rem));
+}
+.option{
+    height:1.2rem;
+    width:1.2rem;
+    border:3px solid white;
+    border-radius:50%;
+    background-color:transparent;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+.option.colored{
+    background-color: white;
+}
+/*DESKTOP VIEW */
+@media screen and (min-width:651px) {
+    header {
+        background: url("fancybarseating_2706x1546.jpg") no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        min-height: 100vh;
+        margin: 0;
+    }
+    body {
+        background-color: #F6F1EE;
+    }
+    html{
+        overflow-x:hidden;
+    }
+
+    /* MOBILE ELEMENTS TO BE 'DISPLAY:NONE', ON DESKTOP */
+    .mobile-res-btn {
+        display: none;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: none;
+    }
+
+    /*------------------------------- */
+    /*LOGO */
+    .logo {
+        font-family: lobster, sans-serif;
+        font-size: 4rem;
+        color: #F6F1EE;
+        position: absolute;
+        top: 1.9rem;
+        left: 1rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        display: block;
+    }
+
+    /*-------------------------------- */
+    /*NAVIGATION MENU*/
+    .nav {
+        background-color: rgba(73, 17, 28, 0.6);
+        width: 60vw;
+        position: absolute;
+        top: 3rem;
+        right: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-shrink: 1;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-content: center;
+    }
+
+    .down-arrow {
+        position: absolute;
+        bottom: 2%;
+        left: 48%;
+        color: white;
+        cursor: pointer;
+        font-size: 3.5rem;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+    .navBar {
+        height: 100%;
+    }
+
+    .drop-button {
+        background-color: inherit;
+        border: none;
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
+    }
+
+    .drop-button a {
+        font-family: "bebas neue", "sans-serif";
+        font-size: 20px;
+        color: white;
+        touch-action: manipulation;
+    }
+
+    .padding-right {
+        padding-right: 1rem;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        z-index: 5;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        overflow: auto;
+        box-shadow: 1px 1px 2px 1px white;
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+        z-index: 1;
+        margin-top: auto;
+    }
+
+    .dropdown-content a {
+        width: 160px;
+        padding: 9px 9px;
+        text-decoration: none;
+        color: black;
+        display: block;
+        font-family: Bebas Neue, "sans-serif";
+    }
+
+    .dropdown-content a:hover {
+        box-shadow: inset 2px 2px 0 2px white;
+        text-decoration: none;
+        opacity: 75%;
+        animation: drop-ani 0.3s ease-in;
+        animation-fill-mode: forwards;
+        position: relative;
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: /*inline-*/ block;
+    }
+
+    a:link, a:visited {
+        text-decoration: none;
+        align-items: center;
+    }
+
+    a:active {
+        color: white;
+    }
+
+    .drop-button a:hover {
+        opacity: 75%;
+        animation: nav-color 0.3s ease-in;
+        animation-fill-mode: forwards;
+        text-decoration: none;
+        color: white;
+    }
+
+    .reservations {
+        display: flex;
+        height: 100%;
+        color: black;
+        background-color: #F6F1EE;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .reservations a {
+        color: black;
+    }
+
+    .reservations a:hover {
+        color: black;
+        animation: none;
+    !important;
+    }
+
+    @keyframes color {
+        0% {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        100% {
+            background-color: #49111c;
+            color: white;
+            opacity: 100%
+        }
+    }
+
+    @keyframes nav-color {
+        0% {
+            color: white;
+            text-decoration: none
+        }
+        100% {
+            color: white;
+            text-decoration: none;
+            opacity: 50%
+        }
+    }
+    @keyframes drop-ani {
+        0% {
+            color: black;
+            background-color: white;
+        }
+        100% {
+            color: white;
+            background-color: #49111c;
+            opacity: 90%;
+        }
+    }
+    /*COMPANY INFO SECTION*/
+    .desktop-info-about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 80vh;
+        grid-template-areas:
+            "info about";
+    }
+
+    .mobile-company-info {
+        grid-area: info;
+        margin: 0;
+        background-color: #F6F1EE;
+        min-height: 100%;
+        color: black;
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: bolder;
+        font-size: 2rem;
+    }
+
+    .info-li {
+        padding: 4px;
+    }
+
+    .company-info-wrapper {
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
+        align-content: center;
+    }
+
+    /* ABOUT US SECTION */
+    .about-us {
+        grid-area: about;
+        margin: 0;
+        min-height: 100%;
+        background-color: #F6F1EE;
+        color: black;
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: bolder;
+        font-size: 2rem;
+    }
+
+    .about-us-wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
+        align-content: center;
+    }
+
+    /*MENU BLOCKS*/
+    .menu-grid {
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:100vh 100vh 100vh;
+        grid-template-areas:
+                "tasting tasting-text"
+                 "entree-text entree"
+                  "drink drink-text";
+    }
+
+    /*DRINK MENU*/
+    .drink-menu-template {
+        height:1fr;
+        width: calc(50vw - 1rem);
+        margin: 0;
+        background: url("copper-mug_2_1336x1512.jpg") center no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        border: 0.5rem solid #F6F1EE;
+        grid-area: drink;
+        z-index: 999;
+    }
+
+    .drink-menu-template.lazy {
+        background-image: none;
+        background-color: #F6F1EE;
+    }
+    .drink-menu{
+        position: relative;
+        grid-area: drink-text;
+    }
+
+    .drink-menu-wrapper {
+       /* height: 100%;
+        width: 100%;*/
+        margin: 0;
+        background: rgba(73, 17, 28, 0.9);
+        /*EXP */
+        position:absolute;
+        height:80vh;
+        width:40vw;
+        transform: rotate(50deg);
+        /* */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+
+    .drink-menu-template-text {
+        padding: 1rem;
+        font-family: Barlow Condensed, sans-serif;
+        font-size: 3rem;
+        color: white;
+        transform: rotate(-50deg);
+    }
+
+    /*ENTREE MENU */
+    .entree-menu-template {
+        height:1fr;
+        width: 1fr;
+        margin: 0;
+        background: url("shishito-dish_1336x1512.jpg") center no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        border: 0.5rem solid #F6F1EE;
+        grid-area: entree;
+        position: relative;
+        z-index: 999;
+    }
+
+    .entree-menu-template.lazy {
+        background-image: none;
+        background-color: #F6F1EE;
+    }
+    .entree-menu{
+        position: relative;
+        grid-area: entree-text;
+    }
+
+    .entree-menu-wrapper {
+        /* EXP*/
+        position: absolute;
+        left:5%;
+        top:15%;
+        border-radius: 50%;
+        /* */
+        /*height: 100%;*/
+       /* width: 100%;*/
+        margin: 0;
+        background-color:rgba(73, 17, 28, 0.9);
+        height: 80vh;
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        padding: 0.5rem;
+        z-index: 0;
+    }
+    .image-reduce-white{
+        height:100%;
+        width:100%;
+        background-color: rgba(0,0,0,0.1);
+    }
+
+    .entree-menu-template-text {
+        font-family: Barlow Condensed, sans-serif;
+        font-size: 3rem;
+        color: ghostwhite;
+    }
+
+    /*TASTING MENU*/
+    .tasting-menu-template {
+        height:1fr;
+        width: 1fr;
+        margin: 0;
+        background: url("plating-fork-compressed_1336x1512.jpg") center no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        border: 0.5rem solid #F6F1EE;
+        grid-area: tasting;
+        position: relative;
+        z-index: 999;
+    }
+
+    .tasting-menu-template.lazy {
+        background-image: none;
+        background-color: #F6F1EE;
+    }
+
+    .tasting-menu-wrapper {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        position: absolute;
+        /*left: 100%;*/
+        /*EXP-CHANGING THE LEFT POSITIONING */
+        left:50%;
+        /* */
+        background-color:rgba(73, 17, 28, 0.9);
+        height: 80vh;
+        width: 40vw;
+        /*border:0.5rem solid red;*/
+        grid-area: tasting-text;
+        transform: rotate(50deg);
+        z-index:0;
+    }
+
+    .tasting-menu-template-text {
+        padding: 1rem;
+        font-family: Barlow Condensed, sans-serif;
+        font-size: 3rem;
+        color: ghostwhite;
+        z-index: 0;
+        opacity: 1;
+    }
+
+    .rotate {
+        transform: rotate(-50deg);
+    }
+    .cuisine-menus-btn{
+        position: absolute;
+        /* TRYING TO GET AN ELEMENT CENTERED ON A ROTATED ELEMENT*/
+        left:57%;top:69%;
+    }
+
+    /*BACKGROUND DIV*/
+    .fish-vendor-img-fixed-div {
+        height: 40vh;
+        background-image: url("fish-market_2706x1284.jpg");
+        background-repeat: no-repeat;
+        background-position: right;
+        background-attachment: fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        margin: 0;
+        padding: 0;
+    }
+    .fish-vendor-img-fixed-div.lazy {
+        background-image: none;
+        background-color: #49111c;
+    }
+
+    /*BACKGROUND DIV*/
+    .barrel-img-fixed-div {
+        height: 40vh; /*calc(100vh - 25rem)*/
+        background: url("barrels_cropped_2706x1284.jpg") no-repeat center fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        margin: 0;
+        will-change: transform;
+    }
+
+    .barrel-img-fixed-div.lazy {
+        background-image: none;
+        background-color:#49111c;
+    }
+
+    .footer {
+        margin: 0;
+        height: 6rem;
+    }
+    .footer-format{
+        height: 100%;
+        background-color: black;
+        color: white;
+    }
+    .footer-links {
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        align-content: center;
+        align-items: center;
+        font-family: Barlow Condensed, sans-serif;
+        font-weight: lighter;
+        margin:0;
+        padding-top: 0.5rem;
+        font-size:1.2rem;
+    }
+    .footer-links > li{
+        padding-right:2rem;
+    }
+
+    .social-ul {
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items:center;
+        padding-top:1rem;
+        font-size:1.5rem;
+        margin:0;
+    }
+
+    .social-ul li {
+        padding-right: 1.5rem;
+    }
+
+    .social-ul a {
+        text-decoration: none;
+        color: white;
+    }
+
+    /*map */
+    .map {
+        height: calc(100vh - 30rem);
+        margin: 0;
+        border-top: 0.5rem solid #F6F1EE;
+    }
+
+    .map.lazy {
+        background-image: none;
+        background-color: #F6F1EE;
+    }
+    /*DESKTOP IMAGE SLIDER */
+    .container{
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+
+    }
+    .slider-container{
+        position:relative;
+        height:80vh;
+        width:1fr;
+        display:flex;
+        flex-direction: row;
+        margin:0;
+        padding:0;
+        overflow: hidden;
+    }
+    .slider{
+        height:80vh;
+        width:1fr;
+        display:flex;
+        flex-direction: row;
+        margin:0;
+        padding:0;
+    }
+    .image>img{
+        height:80vh;
+        width:43rem;
+        min-width:20rem;
+    }
+    .btn button{
+        height: 3rem;
+        width: 3rem;
+        background-color: rgba(255,255,255,0.5);
+        border:none;
+        box-shadow:none;
+        cursor: pointer;
+    }
+    .prev,.next{
+        position: absolute;
+        top:50%;
+    }
+    .prev{
+        left:2%;
+    }
+    .next{
+        right:2%;
+    }
+    .content{
+        display: flex;
+        position: absolute;
+        height:80vh;
+        width:1fr;
+    }
+    .options ul{
+        position: absolute;bottom:2%;left:50%;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        z-index: 999;
+        transform: translateX(-50%);
+    }
+    .option{
+        height:2rem;
+        width:2rem;
+        border:0.3rem solid white;
+        border-radius:50%;
+        background-color:transparent;
+        margin: 0.5rem;
+        cursor: pointer;
+    }
+    .option.colored{
+        background-color: white;
+    }
+
+    /* EVENTS SECTION*/
+    .events{
+        height:1fr;
+        margin:0;
+        grid-area: events;
+    }
+    .events-wrapper{
+        height: 100%;
+        width:1fr;
+        background-color: #F6F1EE;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        align-content: center;
+    }
+    .events-text{
+        color:black;
+        font-family:"Barlow Condensed",sans-serif;
+        font-weight: bolder;
+        font-size: 1.5rem;
+        padding: 2px 2px 2px 2px;
+    }
+    /*GRID FOR SLIDER AND EVENTS */
+    .image-slider-and-events-grid{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:1fr;
+        grid-template-areas:
+            "images events";
+    }
+
+}
+
+
